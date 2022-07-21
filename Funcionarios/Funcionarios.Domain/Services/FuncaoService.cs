@@ -7,7 +7,7 @@ using Funcionarios.Domain.Interfaces.Services;
 
 namespace Funcionarios.Domain.Services
 {
-    public class FuncaoService : IFuncaoService
+    public class FuncaoService : ServiceBase, IFuncaoService
     {
         private readonly IFuncaoRepository _funcaoRepository;
         private readonly IMapper _mapper;
@@ -88,16 +88,6 @@ namespace Funcionarios.Domain.Services
             {
                 throw ex;
             }
-        }
-
-        private ResponseDTO CriarResponse(int id, string mensagem, string erro = "")
-        {
-            return new ResponseDTO
-            {
-                IdRegistro = id,
-                Erro = erro,
-                Mensagem = mensagem,
-            };
         }
     }
 }

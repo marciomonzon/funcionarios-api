@@ -4,6 +4,7 @@
     {
         public int IdRegistro { get; set; }
         public string Mensagem { get; set; }
-        public string Erro { get; set; }
+        public bool Erro { get; set; }
+
     }
 }

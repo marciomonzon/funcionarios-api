@@ -6,8 +6,8 @@ namespace Funcionarios.Domain.Interfaces.Services
     {
         Task<IEnumerable<FuncionarioCltDTO>> GetAll();
         Task<FuncionarioCltDTO> GetById(int id);
-        void Add(FuncionarioCltDTO funcionario);
-        void Update(FuncionarioCltDTO funcionario);
-        Task Delete(int id);
+        Task<ResponseDTO> Add(FuncionarioCltDTO funcionario);
+        Task<ResponseDTO> Update(int id, FuncionarioCltDTO funcionario);
+        Task<ResponseDTO> Delete(int id);
     }
 }

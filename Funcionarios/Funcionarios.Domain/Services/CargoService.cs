@@ -7,7 +7,7 @@ using Funcionarios.Domain.Interfaces.Services;
 
 namespace Funcionarios.Domain.Services
 {
-    public class CargoService : ICargoService
+    public class CargoService : ServiceBase, ICargoService
     {
         private readonly ICargoRepository _cargoRepository;
         private readonly IMapper _mapper;
@@ -75,7 +75,6 @@ namespace Funcionarios.Domain.Services
             try
             {
                 var cargoEncontrado = await _cargoRepository.GetById(id);
-
                 if (cargoEncontrado == null) return CriarResponse(0, "Cargo não encontrado!");
 
                 var resultado = await _cargoRepository.Delete(cargoEncontrado);
@@ -88,16 +87,6 @@ namespace Funcionarios.Domain.Services
             {
                 throw ex;
             }
-        }
-
-        private ResponseDTO CriarResponse(int id, string mensagem, string erro = "")
-        {
-            return new ResponseDTO
-            {
-                IdRegistro = id,
-                Erro = erro,
-                Mensagem = mensagem,
-            };
         }
     }
 }
