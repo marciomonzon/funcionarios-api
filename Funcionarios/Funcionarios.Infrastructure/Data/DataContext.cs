@@ -1,4 +1,5 @@
 ﻿using Funcionarios.Domain.Entities;
+using Funcionarios.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Funcionarios.Infrastructure.Data
@@ -7,6 +8,14 @@ namespace Funcionarios.Infrastructure.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new CargoConfiguration());
+            modelBuilder.ApplyConfiguration(new FuncaoConfiguration());
+            modelBuilder.ApplyConfiguration(new FuncionarioCLTConfiguration());
+            modelBuilder.ApplyConfiguration(new FuncionarioPJConfiguration());
         }
 
         public DbSet<FuncionarioCLT> FuncionarioCLT { get; set; }

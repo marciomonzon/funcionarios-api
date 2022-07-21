@@ -10,6 +10,10 @@ namespace Funcionarios.Domain.Entities
             Nome = nome;
         }
 
+        public Cargo() 
+        { 
+        }
+
         public string CBO { get; private set; }
         public string Nome { get; private set; }
         public List<FuncionarioCLT> FuncionarioCLT { get; set; }
