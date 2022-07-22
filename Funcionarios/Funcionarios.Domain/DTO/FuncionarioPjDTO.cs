@@ -7,7 +7,6 @@
         public string Email { get; set; }
         public string DataNascimento { get; set; }
         public string Salario { get; set; }
-        public string Funcao { get; set; }
-        public string Cargo { get; set; }
+        public int FuncaoId { get; set; }
     }
 }
