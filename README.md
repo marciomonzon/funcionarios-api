@@ -1,5 +1,5 @@
 # funcionarios-api
-.NET 6 API.
+.NET 6 API with Swagger.
 
 <ul>
 <li>.NET 6</li>
