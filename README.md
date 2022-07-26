@@ -7,6 +7,8 @@
 <li>Code First Migrations (SQL Server)</li>
 <li>Fluent API Mapping</li>
 <li>DTO</li>
+<li>AutoMapper</li>
+<li>Custom Exeption Classes</li>
 <li>DDD</li>
 </ul>
 
