@@ -8,7 +8,7 @@
 <li>Fluent API Mapping</li>
 <li>DTO</li>
 <li>AutoMapper</li>
-<li>Custom Exeption Classes</li>
+<li>Custom Exception Classes</li>
 <li>DDD</li>
 </ul>
 
