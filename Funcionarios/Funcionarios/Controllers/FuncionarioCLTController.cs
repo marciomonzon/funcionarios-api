@@ -1,18 +1,17 @@
 ﻿using Funcionarios.Domain.DTO;
 using Funcionarios.Domain.Interfaces.Services;
 using Funcionarios.Exceptions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Funcionarios.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FuncionarioPJController : ControllerBase
+    public class FuncionarioCLTController : ControllerBase
     {
-        private readonly IFuncionarioPJService _funcionarioService;
+        private readonly IFuncionarioCLTService _funcionarioService;
 
-        public FuncionarioPJController(IFuncionarioPJService funcionarioService)
+        public FuncionarioCLTController(IFuncionarioCLTService funcionarioService)
         {
             _funcionarioService = funcionarioService;
         }
@@ -28,7 +27,7 @@ namespace Funcionarios.Controllers
 
                 return Ok(cargos);
             }
-            catch (FuncionarioPJControllerException ex)
+            catch (FuncionarioCLTControllerException ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
@@ -45,14 +44,14 @@ namespace Funcionarios.Controllers
 
                 return Ok(cargo);
             }
-            catch (FuncionarioPJControllerException ex)
+            catch (FuncionarioCLTControllerException ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCargo([FromBody] FuncionarioPjDTO funcionario)
+        public async Task<IActionResult> AddCargo([FromBody] FuncionarioCltDTO funcionario)
         {
             try
             {
@@ -65,14 +64,14 @@ namespace Funcionarios.Controllers
 
                 return Ok(response);
             }
-            catch (FuncionarioPJControllerException ex)
+            catch (FuncionarioCLTControllerException ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCargo(int id, [FromBody] FuncionarioPjDTO funcionario)
+        public async Task<IActionResult> UpdateCargo(int id, [FromBody] FuncionarioCltDTO funcionario)
         {
             try
             {
@@ -82,7 +81,7 @@ namespace Funcionarios.Controllers
 
                 return Ok(response);
             }
-            catch (FuncionarioPJControllerException ex)
+            catch (FuncionarioCLTControllerException ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
@@ -103,7 +102,7 @@ namespace Funcionarios.Controllers
 
                 return Ok(response);
             }
-            catch (FuncionarioPJControllerException ex)
+            catch (FuncionarioCLTControllerException ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }

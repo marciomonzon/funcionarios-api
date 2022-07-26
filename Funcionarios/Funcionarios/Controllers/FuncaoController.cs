@@ -51,13 +51,13 @@ namespace Funcionarios.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCargo([FromBody] FuncaoDTO cargo)
+        public async Task<IActionResult> AddCargo([FromBody] FuncaoDTO funcao)
         {
             try
             {
-                if (cargo == null) return NoContent();
+                if (funcao == null) return NoContent();
 
-                var response = await _funcaoService.Add(cargo);
+                var response = await _funcaoService.Add(funcao);
 
                 if (response.IdRegistro > 0)
                     return StatusCode(StatusCodes.Status201Created, response.Mensagem);
@@ -71,13 +71,13 @@ namespace Funcionarios.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCargo(int id, [FromBody] FuncaoDTO cargo)
+        public async Task<IActionResult> UpdateCargo(int id, [FromBody] FuncaoDTO funcao)
         {
             try
             {
-                if (cargo == null) return NoContent();
+                if (funcao == null) return NoContent();
 
-                var response = await _funcaoService.Update(id, cargo);
+                var response = await _funcaoService.Update(id, funcao);
 
                 return Ok(response);
             }
