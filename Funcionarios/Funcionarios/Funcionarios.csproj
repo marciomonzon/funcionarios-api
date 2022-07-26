@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Funcionarios.Domain\Funcionarios.Domain.csproj" />
     <ProjectReference Include="..\Funcionarios.Infrastructure\Funcionarios.Infrastructure.csproj" />
   </ItemGroup>
